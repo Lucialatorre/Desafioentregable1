@@ -63,40 +63,9 @@ function nuevoPedido(query) {
         console.log(pedido.libro);
         console.log(pedido.extra);
 
-        extra (extra, libro, pedido)
-        descuentoPorCantidad(libro, pedido)
         return pedido
     }
 }
 let query = prompt("Quieres realizar un pedido ?");
 let pedidoNuevo = nuevoPedido(query)
 
-const descuentoPorCantidad = (valor, pedido) => {
-    if (valor >= 5) {
-
-        result = result - (result / 100) * 10
-        let medioPago = prompt("el total del pedido con descuento es  $" + result + "\n Pago en efectivo(e) o Tarjeta(t) ? \n el pago con tarjeta tiene un recargo del 5%  ")
-        mediosDePago(medioPago, pedido)
-    } else {
-        medioPago = prompt("el total del pedido es  $" + result + "\n Pago en efectivo(e) o Tarjeta(t) ? \n el pago con tarjeta tiene un recargo del 5%")
-        mediosDePago(medioPago, pedido)
-    }
-}
-
-const mediosDePago = (value, pedido) => {
-
-    if (value === "t") {
-        result = result + (result / 100) * 5
-        pedido.medioDePago = "Tarjeta"
-        pedido.total = result
-        alert("El total del pedido pagado con tarjeta es $: " + result)
-        result = 0 
-     } else if (value === "e") {
-            pedido.medioDePago = "Efectivo"
-            pedido.total = result
-            alert("El total del pedido es $: " + result)
-            result = 0
-    
-        }
-    
-    }
